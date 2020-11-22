@@ -5,7 +5,7 @@ let pokemonList = [
   { name: 'Slowpoke', height: 11, types: ['water', 'psychic'] }
 ]
 
-//
+// write list of pokemon with height, calling out those over 15 as big
 for (let i=0; i < pokemonList.length; i++){
   if (pokemonList[i].height >=15){
     document.write('<p>' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ') - Wow! That\'s a Big Pokémon!</p>')
