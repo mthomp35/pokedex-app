@@ -29,6 +29,5 @@ main {
 .pokemon-photos__item {
   max-width: 250px;
   height: auto;
-  background-color: #556b2f;
   margin: 20px;
 }
