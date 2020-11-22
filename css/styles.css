@@ -2,10 +2,33 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #e2e2e2;
+  text-align: center;
+}
+
 .logo {
   display: block;
   max-width: 65%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
+}
+
+main {
+  text-align: center;
+}
+
+.pokemon-photos {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  justify-content: center;
+}
+
+.pokemon-photos__item {
+  max-width: 250px;
+  height: auto;
+  background-color: #556b2f;
+  margin: 20px;
 }
