@@ -27,11 +27,9 @@ let pokemonRepository = (function () {
 
 })();
 
-
-
 //write list of pokemon using forEach
-pokemonList.forEach(function (pokemon) {
-    document.write(pokemon.name + ', height: ' + pokemon.height + ', ' + pokemon.types[0] + ', ' + pokemon.types[1] + '<br>');
+pokemonRepository.getAll().forEach(function(pokemon) {
+  document.write(pokemon.name + ', height: ' + pokemon.height + ', ' + pokemon.types[0] + ', ' + pokemon.types[1] + '<br>');
 });
 
 
