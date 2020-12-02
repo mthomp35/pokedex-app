@@ -8,11 +8,16 @@ let pokemonRepository = (function () {
   ];
 
   function add(pokemon) {
-    pokemonList.push(pokemon);
+    // checks to ensure data type of pokemon input being added matches format of pokemonList
+    if (typeof pokemon === ('name' && 'object') || ('height' && 'number') || ('types' && 'object')) {
+      pokemonList.push(pokemon);
+    } else {
+      alert("Pokemon value is not correct");
+    }
   }
 
   function remove(pokemon) {
-    pokemonList.pull(pokemon);
+    pokemonList.splice(pokemon);
   }
 
   function getAll() {
