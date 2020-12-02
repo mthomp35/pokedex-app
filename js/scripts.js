@@ -1,4 +1,4 @@
-// wrap pokemon repository in iife
+// wrap global variables in iife
 let pokemonRepository = (function () {
   // create array of pokemon
   let pokemonList = [
@@ -7,6 +7,7 @@ let pokemonRepository = (function () {
     { name: 'Slowpoke', height: 11, types: ['water', 'psychic'] }
   ];
 
+  // function to add pokemon to list
   function add(pokemon) {
     // checks to ensure data type of pokemon input being added matches format of pokemonList
     if (typeof pokemon === ('name' && 'object') || ('height' && 'number') || ('types' && 'object')) {
@@ -16,10 +17,12 @@ let pokemonRepository = (function () {
     }
   }
 
+  // function to remove pokemon from list
   function remove(pokemon) {
     pokemonList.splice(pokemon);
   }
 
+  // function to display full list of pokemon
   function getAll() {
     return pokemonList;
   }
@@ -32,7 +35,7 @@ let pokemonRepository = (function () {
 
 })();
 
-//write list of pokemon using forEach
+// write list of pokemon using forEach
 pokemonRepository.getAll().forEach(function(pokemon) {
   document.write(pokemon.name + ', height: ' + pokemon.height + ', ' + pokemon.types[0] + ', ' + pokemon.types[1] + '<br>');
 });
