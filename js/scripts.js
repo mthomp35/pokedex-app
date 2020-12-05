@@ -10,10 +10,13 @@ let pokemonRepository = (function () {
   // function to add pokemon to list
   function add(pokemon) {
     // checks to ensure data type of pokemon input being added matches format of pokemonList
-    if (typeof pokemon === ('name' && 'object') || ('height' && 'number') || ('types' && 'object')) {
-      pokemonList.push(pokemon);
+    if (typeof pokemon !== 'object') {
+      return "Wrong data type for Pokemon";
+    } else if (!pokemon.name || !pokemon.height || !pokemon.types) {
+      return "Pokemon does not have all required properties";
     } else {
-      alert("Pokemon value is not correct");
+      pokemonList.push(pokemon);
+      return pokemonList;
     }
   }
 
