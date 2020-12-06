@@ -50,7 +50,7 @@ let pokemonRepository = (function () {
 
 })();
 
-// write list of pokemon using forEach
+// call all objects in pokemonList and add their 'name' to a button in a list
 pokemonRepository.getAll().forEach(function(pokemon) {
   pokemonRepository.addListItem(pokemon);
 });
