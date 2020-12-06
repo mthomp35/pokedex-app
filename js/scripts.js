@@ -40,6 +40,8 @@ let pokemonRepository = (function () {
 
 // write list of pokemon using forEach
 pokemonRepository.getAll().forEach(function(pokemon) {
+// create variable to select the pokemon-list ul from the index
+  let pokemonListElement = document.querySelector('.pokemon-list');
   document.write(pokemon.name + ', height: ' + pokemon.height + ', ' + pokemon.types[0] + ', ' + pokemon.types[1] + '<br>');
 });
 
