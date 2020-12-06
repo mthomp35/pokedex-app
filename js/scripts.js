@@ -44,11 +44,10 @@ pokemonRepository.getAll().forEach(function(pokemon) {
   let listElement = document.querySelector('.pokemon-list');
   let listItem = document.createElement('li');
   let button = document.createElement('button');
-  button.innerText = listItem.name;
+  button.innerText = pokemon.name;
   button.classList.add('pokemon-button');
   listItem.appendChild(button);
   listElement.appendChild(listItem);
-  console.log(button.innerText);
 });
 
 
