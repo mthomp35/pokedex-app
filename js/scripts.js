@@ -9,7 +9,7 @@ let pokemonRepository = (function () {
 
   // function to add pokemon to list
   function add(pokemon) {
-    // checks to ensure data type of pokemon input being added matches format of pokemonList
+    // checks to ensure data type of pokemon input being added matches format of pokemonList & includes all properties
     if (typeof pokemon !== 'object') {
       return "Wrong data type for Pokemon";
     } else if (!pokemon.name || !pokemon.height || !pokemon.types) {
@@ -30,24 +30,29 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
+  function addListItem(pokemon) {
+    // create variable to select the pokemon-list ul from the index
+      let listElement = document.querySelector('.pokemon-list');
+      let listItem = document.createElement('li');
+      let button = document.createElement('button');
+      button.innerText = pokemon.name;
+      button.classList.add('pokemon-button');
+      listItem.appendChild(button);
+      listElement.appendChild(listItem);
+  }
+
   return {
     add: add,
     remove: remove,
-    getAll: getAll
+    getAll: getAll,
+    addListItem:  addListItem,
   };
 
 })();
 
 // write list of pokemon using forEach
 pokemonRepository.getAll().forEach(function(pokemon) {
-// create variable to select the pokemon-list ul from the index
-  let listElement = document.querySelector('.pokemon-list');
-  let listItem = document.createElement('li');
-  let button = document.createElement('button');
-  button.innerText = pokemon.name;
-  button.classList.add('pokemon-button');
-  listItem.appendChild(button);
-  listElement.appendChild(listItem);
+  pokemonRepository.addListItem(pokemon);
 });
 
 
