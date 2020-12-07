@@ -4,6 +4,7 @@
 
 body {
   background-color: #e2e2e2;
+  color: #000;
   text-align: center;
 }
 
@@ -48,7 +49,8 @@ main {
     transition: 0.2s opacity;
 }
 
-.pokemon-button:hover {
+.pokemon-button:hover,
+.pokemon-button:focus {
   cursor: pointer;
   opacity: 0.8;
 }
