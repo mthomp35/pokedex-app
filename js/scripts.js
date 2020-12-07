@@ -34,11 +34,21 @@ let pokemonRepository = (function () {
     // create variable to select the pokemon-list ul from the index
       let listElement = document.querySelector('.pokemon-list');
       let listItem = document.createElement('li');
+      // create a button to display each pokemon name
       let button = document.createElement('button');
       button.innerText = pokemon.name;
       button.classList.add('pokemon-button');
       listItem.appendChild(button);
       listElement.appendChild(listItem);
+      button.addEventListener('submit', function (event) {
+        // show details of the pokemon selected when button is clicked
+        showDetails(pokemon);
+      });
+  }
+
+  // show details of the pokemon
+  function showDetails(pokemon) {
+    console.log(pokemon);
   }
 
   return {
