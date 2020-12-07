@@ -21,8 +21,16 @@ let pokemonRepository = (function () {
   }
 
   // function to remove pokemon from list
-  function remove(pokemon) {
-    pokemonList.splice(pokemon);
+  function remove(name) {
+    // loop through array and find object containing defined name, then remove that object (would use map normally to loop through array)
+    for(let i=0; i<pokemonList.length; i++) {
+      console.log(pokemonList[i], " contains ", name, "?");
+      if(name === pokemonList[i].name) {
+        pokemonList.splice(i, 1);
+        break;
+      }
+    }
+    return pokemonList;
   }
 
   // function to display full list of pokemon
