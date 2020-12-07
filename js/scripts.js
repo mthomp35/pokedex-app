@@ -40,15 +40,20 @@ let pokemonRepository = (function () {
       button.classList.add('pokemon-button');
       listItem.appendChild(button);
       listElement.appendChild(listItem);
-      button.addEventListener('click', function (event) {
+      pokemonButton(pokemon);
+    //  button.addEventListener('click', function (event) {
         // show details of the pokemon selected when button is clicked
-        showDetails(pokemon);
-      });
+    //    showDetails(pokemon);
+    //  });
   }
 
   // show details of the pokemon
   function showDetails(pokemon) {
     console.log(pokemon);
+  }
+
+  function pokemonButton(pokemon) {
+    addListItem.button.addEventListener('click', showDetails);
   }
 
   return {
