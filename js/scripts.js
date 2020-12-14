@@ -8,14 +8,14 @@ let pokemonRepository = (function () {
   // function to add pokemon to list
   function add(pokemon) {
     // checks to ensure data type of pokemon input being added matches format of pokemonList & includes all properties
-    // if (typeof pokemon !== 'object') {
-    //   return "Wrong data type for Pokemon";
-    // } else if (!pokemon.name || !pokemon.height || !pokemon.types) {
-    //   return "Pokemon does not have all required properties";
-    // } else {
+    if (typeof pokemon !== 'object') {
+      return "Wrong data type for Pokemon";
+    } else if (!pokemon.name || !pokemon.detailsUrl) {
+      return "Pokemon does not have all required properties";
+    } else {
       pokemonList.push(pokemon);
       return pokemonList;
-    // }
+    }
   }
 
   // function to remove pokemon from list
