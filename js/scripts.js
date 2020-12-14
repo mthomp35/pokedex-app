@@ -8,14 +8,14 @@ let pokemonRepository = (function () {
   // function to add pokemon to list
   function add(pokemon) {
     // checks to ensure data type of pokemon input being added matches format of pokemonList & includes all properties
-    if (typeof pokemon !== 'object') {
-      return "Wrong data type for Pokemon";
-    } else if (!pokemon.name || !pokemon.height || !pokemon.types) {
-      return "Pokemon does not have all required properties";
-    } else {
+    // if (typeof pokemon !== 'object') {
+    //   return "Wrong data type for Pokemon";
+    // } else if (!pokemon.name || !pokemon.height || !pokemon.types) {
+    //   return "Pokemon does not have all required properties";
+    // } else {
       pokemonList.push(pokemon);
       return pokemonList;
-    }
+    // }
   }
 
   // function to remove pokemon from list
@@ -54,7 +54,9 @@ let pokemonRepository = (function () {
 
   // show details of the pokemon
   function showDetails(pokemon) {
-    console.log(pokemon);
+    loadDetails(pokemon).then(function () {
+      console.log(pokemon);
+    });
   }
 
   function loadList(){
@@ -73,12 +75,26 @@ let pokemonRepository = (function () {
     })
   }
 
+  function loadDetails(item) {
+    let url = item.detailsUrl;
+    return fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (details) {
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = details.types;
+    }).catch(function (e) {
+      console.error(e);
+    });
+  }
+
   return {
     add: add,
     remove: remove,
     getAll: getAll,
     addListItem:  addListItem,
-    loadList: loadList
+    loadList: loadList,
+    loadDetails: loadDetails
   };
 
 })();
