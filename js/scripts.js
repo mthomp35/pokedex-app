@@ -1,11 +1,9 @@
 // wrap global variables in iife
 let pokemonRepository = (function () {
   // create array of pokemon
-  let pokemonList = [
-    { name: 'Bulbasaur', height: 7, types: ['grass', 'poison'] },
-    { name: 'Charizard', height: 20, types: ['fire', 'flying'] },
-    { name: 'Slowpoke', height: 11, types: ['water', 'psychic'] }
-  ];
+  let pokemonList = [];
+  // add api link to pull pokemonList from
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   // function to add pokemon to list
   function add(pokemon) {
@@ -59,19 +57,40 @@ let pokemonRepository = (function () {
     console.log(pokemon);
   }
 
+  function loadList(){
+    return fetch(apiUrl).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      json.results.forEach(function (item) {
+        let pokemon = {
+          name: item.name,
+          detailsUrl: item.url
+        };
+        add(pokemon);
+      });
+    }).catch(function (e) {
+      console.error(e);
+    })
+  }
+
   return {
     add: add,
     remove: remove,
     getAll: getAll,
     addListItem:  addListItem,
+    loadList: loadList
   };
 
 })();
 
-// call all objects in pokemonList and add their 'name' to a button in a list
-pokemonRepository.getAll().forEach(function(pokemon) {
-  pokemonRepository.addListItem(pokemon);
+// load the data from the pokemon api
+pokemonRepository.loadList().then(function() {
+  // call all objects in pokemonList and add their 'name' to a button in a list
+  pokemonRepository.getAll().forEach(function(pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
 });
+
 
 
 // write list of pokemon with height, calling out those over 15 as big
