@@ -33,6 +33,11 @@ main {
   margin: 20px;
 }
 
+.pokemon-photos__item:hover,
+.pokemon-photos__item:focus {
+  filter:brightness(60%);
+}
+
 .pokemon-list {
   list-style-type: none;
 }
