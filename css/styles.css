@@ -59,3 +59,58 @@ main {
   cursor: pointer;
   opacity: 0.8;
 }
+
+.modal-container {
+  display: none;
+}
+
+/* This is the grayed out area covering the whole page */
+.modal-container.is-visible {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+  /* To show the modal above other content */
+  z-index: 999;
+
+  /* To allow scrolling if the screen is not high enough*/
+  overflow: auto;
+
+  /* To center the modal */
+  display: grid;
+  text-align: center;
+}
+
+/* This is where the information is shown */
+.modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  color: #2e5cb8;
+  background: #fff;
+  padding: 15px;
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
+}
+
+.modal-close {
+
+}
+
+.modal h1 {
+
+}
+
+.modal p {
+
+}
+
+.modal img {
+
+}
