@@ -5,6 +5,8 @@ let pokemonRepository = (function () {
   // add api link to pull pokemonList from
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
+  let modalContainer = document.querySelector('.modal-container');
+
   // function to add pokemon to list
   function add(pokemon) {
     // checks to ensure data type of pokemon input being added matches format of pokemonList & includes all properties
@@ -90,8 +92,6 @@ let pokemonRepository = (function () {
   }
 
   function showModal(title, text) {
-    let modalContainer = document.querySelector('.modal-container');
-
     // Clear all existing modal content
     modalContainer.innerText = '';
 
@@ -102,6 +102,7 @@ let pokemonRepository = (function () {
     let closeButtonElement = document.createElement('button');
     closeButtonElement.classList.add('modal-close');
     closeButtonElement.innerText = 'Close';
+    closeButtonElement.addEventListener('click', hideModal);
 
     let titleElement = document.createElement('h1');
     titleElement.innerText = title;
@@ -117,7 +118,27 @@ let pokemonRepository = (function () {
     modalContainer.classList.add('is-visible');
   }
 
+function hideModal() {
+  modalContainer.classList.remove('is-visible');
 
+
+
+}
+
+// Close the modal if the escape key is pressed but only if the modal is visible
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+    hideModal();
+  }
+});
+
+// Close the modal if & only if the modal container (outer area) is clicked
+modalContainer.addEventListener('click', (e) => {
+    let target = e.target;
+    if (target === modalContainer) {
+      hideModal();
+    }
+});
 
   return {
     add: add,
