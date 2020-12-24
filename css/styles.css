@@ -42,6 +42,7 @@ main {
   list-style-type: none;
 }
 
+/* Decorate the button listing the pokemon */
 .pokemon-button {
     font-size: 16px;
     text-align: center;
@@ -102,10 +103,6 @@ main {
 
 .modal-close {
   float: right;
-  /*border: 0;
-  background: none;
-  color: #777;
-  text-decoration: underline;*/
 }
 
 .modal h1 {
@@ -115,5 +112,5 @@ main {
 }
 
 .modal p {
-  font-size: 18px;
+  font-size: 20px;
 }
