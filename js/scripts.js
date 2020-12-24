@@ -47,7 +47,7 @@ let pokemonRepository = (function () {
       listItem.appendChild(button);
       listElement.appendChild(listItem);
       button.addEventListener('click', function (event) {
-        // show details of the pokemon selected when button is clicked
+        // show modal with details of the pokemon selected when button is clicked
         showDetails(pokemon);
       });
   }
@@ -115,11 +115,6 @@ let pokemonRepository = (function () {
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add('is-visible');
-
-    // Show the modal when the pokemon button is clicked
-    //document.querySelector('show-modal').addEventListener('click', () => {
-    //  showModal('Modal Title', 'Modal content');
-    //});
   }
 
 
