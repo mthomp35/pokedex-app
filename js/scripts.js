@@ -55,7 +55,7 @@ let pokemonRepository = (function () {
   // show details of the pokemon
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      showModal(pokemon);
+      showModal(pokemon.name, pokemon.height);
     });
   }
 
@@ -90,7 +90,7 @@ let pokemonRepository = (function () {
   }
 
   function showModal(title, text) {
-    let modalContainer = document.querySelector('#modal-container');
+    let modalContainer = document.querySelector('.modal-container');
 
     // Clear all existing modal content
     modalContainer.innerText = '';
@@ -115,12 +115,14 @@ let pokemonRepository = (function () {
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add('is-visible');
+
+    // Show the modal when the pokemon button is clicked
+    //document.querySelector('show-modal').addEventListener('click', () => {
+    //  showModal('Modal Title', 'Modal content');
+    //});
   }
 
-  // Show the modal when the pokemon button is clicked
-  document.querySelector(.show-modal).addEventListener('click', () => {
-    showModal('Modal Title', 'Modal content');
-  });
+
 
   return {
     add: add,
