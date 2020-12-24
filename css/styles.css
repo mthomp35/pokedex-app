@@ -111,6 +111,12 @@ main {
   text-transform: capitalize;
 }
 
-.modal p {
+.modal p,
+.modal img {
   font-size: 20px;
+  display:inline-block;
+}
+
+.modal img {
+  float: right;
 }
