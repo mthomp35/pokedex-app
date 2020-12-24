@@ -55,7 +55,7 @@ let pokemonRepository = (function () {
   // show details of the pokemon
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);
+      showModal(pokemon);
     });
   }
 
@@ -89,6 +89,39 @@ let pokemonRepository = (function () {
     });
   }
 
+  function showModal(title, text) {
+    let modalContainer = document.querySelector('#modal-container');
+
+    // Clear all existing modal content
+    modalContainer.innerText = '';
+
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    // Add the new modal content
+    let closeButtonElement = document.createElement('button');
+    closeButtonElement.classList.add('modal-close');
+    closeButtonElement.innerText = 'Close';
+
+    let titleElement = document.createElement('h1');
+    titleElement.innerText = title;
+
+    let contentElement = document.createElement('p');
+    contentElement.innerText = text;
+
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(titleElement);
+    modal.appendChild(contentElement);
+    modalContainer.appendChild(modal);
+
+    modalContainer.classList.add('is-visible');
+  }
+
+  // Show the modal when the pokemon button is clicked
+  document.querySelector(.show-modal).addEventListener('click', () => {
+    showModal('Modal Title', 'Modal content');
+  });
+
   return {
     add: add,
     remove: remove,
@@ -107,14 +140,3 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
-
-
-// write list of pokemon with height, calling out those over 15 as big
-// for (let i=0; i < pokemonList.length; i++){
-  // if (pokemonList[i].height >=15){
-    // document.write('<p>' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ') - Wow! That\'s a Big Pokémon!</p>')
-  // }else {
-    // document.write('<p>' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ') </p>')
-  // }
-// }
