@@ -57,7 +57,7 @@ let pokemonRepository = (function () {
   // show details of the pokemon
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      showModal(pokemon.name, pokemon.height);
+      showModal(pokemon);
     });
   }
 
@@ -84,14 +84,24 @@ let pokemonRepository = (function () {
     }).then(function (details) {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
-      item.types = details.types;
-      item.abilities = details.abilities;
+      item.types = [];
+      // Find the name of the types and list them in the item types array
+      for (let j = 0; j < details.types.length; j++) {
+        item.types.push(' ' + details.types[j].type.name);
+      }
+
+      // Find the name of the abilities and list them in the item abilities array
+      item.abilities = [];
+      details.abilities.forEach((abilities, i) => {
+        item.abilities.push(' ' + details.abilities[i].ability.name);
+      });
+
     }).catch(function (e) {
       console.error(e);
     });
   }
 
-  function showModal(title, text) {
+  function showModal(pokemon) {
     // Clear all existing modal content
     modalContainer.innerText = '';
 
@@ -105,14 +115,23 @@ let pokemonRepository = (function () {
     closeButtonElement.addEventListener('click', hideModal);
 
     let titleElement = document.createElement('h1');
-    titleElement.innerText = title;
+    titleElement.innerText = pokemon.name;
 
+    // Information about the pokemon selected
     let contentElement = document.createElement('p');
-    contentElement.innerText = text;
+    contentElement.innerText = `Height: ${pokemon.height}
+
+    Types: ${pokemon.types}
+
+    Abilities: ${pokemon.abilities}`;
+
+    let imageElement = document.createElement('img');
+    imageElement.src = pokemon.imageUrl
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
+    modal.appendChild(imageElement);
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add('is-visible');
@@ -120,9 +139,6 @@ let pokemonRepository = (function () {
 
 function hideModal() {
   modalContainer.classList.remove('is-visible');
-
-
-
 }
 
 // Close the modal if the escape key is pressed but only if the modal is visible
