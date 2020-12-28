@@ -84,6 +84,7 @@ let pokemonRepository = (function () {
       return response.json();
     }).then(function (details) {
       item.imageUrl = details.sprites.front_default;
+      // Add better pokemon image...item.masterImage = details.sprites.other.artwork-official.front_default;
       item.height = details.height;
       item.types = [];
       // Find the name of the types and list them in the item types array
@@ -127,7 +128,7 @@ let pokemonRepository = (function () {
     Abilities: ${pokemon.abilities}`;
 
     let imageElement = document.createElement('img');
-    imageElement.src = pokemon.imageUrl
+    imageElement.src = pokemon.imageUrl;
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
