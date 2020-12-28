@@ -142,4 +142,5 @@ main {
 
 .modal img {
   float: right;
+  max-width: 200px;
 }
