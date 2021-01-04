@@ -47,9 +47,11 @@ let pokemonRepository = (function () {
       // create a button to display each pokemon name
       let button = document.createElement('button');
       button.innerText = pokemon.name;
-      button.classList.add('pokemon-button');
-      // add Bootstrap button class
-      button.classList.add('btn');
+      // add button class for formatting and Bootstrap
+      button.classList.add('pokemon-button', 'btn');
+      button.setAttribute('type', 'button');
+      button.setAttribute('data-toggle', 'modal');
+      button.setAttribute('data-target', '#modal-container');
       listItem.appendChild(button);
       listElement.appendChild(listItem);
       button.addEventListener('click', function (event) {
@@ -107,9 +109,9 @@ let pokemonRepository = (function () {
     });
   }
 
-  function showModal(pokemon) {
-    // Clear all existing modal content
-    modalContainer.innerText = '';
+  // function showModal(pokemon) {
+  //   // Clear all existing modal content
+  //   modalContainer.innerText = '';
 
 //     let modal = document.createElement('div');
 //     modal.classList.add('modal');
@@ -141,7 +143,7 @@ let pokemonRepository = (function () {
 //     modalContainer.appendChild(modal);
 //
 //     modalContainer.classList.add('is-visible');
-//   }
+//  }
 //
 // function hideModal() {
 //   modalContainer.classList.remove('is-visible');
