@@ -110,23 +110,24 @@ let pokemonRepository = (function () {
   }
 
   function showModal(pokemon) {
-    // Clear all existing modal content
-    modalContainer.innerText = '';
+    let modalHeader = $('.modal-header');
+    let modalTitle = $('.modal-title');
+    let modalBody = $('.modal-body');
 
-//     let modal = document.createElement('div');
-//     modal.classList.add('modal');
-//
+    // Clear all existing modal content
+    modalTitle.empty();
+    modalBody.empty();
+
 //     // Add the new modal content
 //     let closeButtonElement = document.createElement('button');
 //     closeButtonElement.classList.add('modal-close');
 //     closeButtonElement.innerText = 'Close';
 //     closeButtonElement.addEventListener('click', hideModal);
 
-    document.querySelector('.modal-title').innerText = pokemon.name;
+    modalTitle.innerText = pokemon.name;
 
     // Information about the pokemon selected
-    let contentElement = document.querySelector('modal-body');
-    contentElement.innerText = `Height: ${pokemon.height}
+    modalBody.innerText = `Height: ${pokemon.height}
 
     Types: ${pokemon.types}
 
