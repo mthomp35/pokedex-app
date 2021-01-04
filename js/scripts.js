@@ -125,17 +125,17 @@ let pokemonRepository = (function () {
 
     let abilitiesElement = $('<p>' + 'Abilities: ' + pokemon.abilities + '</p>');
 
-    let imageElement = $('<img class="modal-img">');
+    let imageElement = $('<img class="modal-img" />');
     imageElement.attr('src', pokemon.masterImage);
 
     modalBody.append(heightElement);
     modalBody.append(typesElement);
     modalBody.append(abilitiesElement);
     modalBody.append(imageElement);
-//
+
 //    modalContainer.classList.add('is-visible');
  }
-//
+
 // function hideModal() {
 //   modalContainer.classList.remove('is-visible');
 // }
