@@ -89,7 +89,7 @@ main {
 }
 
 /* This is the grayed out area covering the whole page */
-.modal {
+.modal-container.is-visible {
   position: fixed;
   padding: 20px;
   box-sizing: border-box;
@@ -111,7 +111,7 @@ main {
 }
 
 /* This is where the information is shown */
-.modal-dialog {
+.modal {
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
