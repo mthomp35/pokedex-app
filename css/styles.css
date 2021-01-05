@@ -110,7 +110,7 @@ main {
   text-align: center;
 }
 
-/* This is where the information is shown */
+/* This is where the information is shown
 .modal {
   margin: auto;
   display: inline-block;
@@ -142,4 +142,4 @@ main {
 .modal img {
   float: right;
   max-width: 200px;
-}
+} */
