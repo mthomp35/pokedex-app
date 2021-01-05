@@ -40,8 +40,6 @@ let pokemonRepository = (function () {
     // create variable to select the pokemon-list ul from the index
       let listElement = document.querySelector('.pokemon-list');
       let listItem = document.createElement('li');
-      // add Bootstrap li class
-      listItem.classList.add('group-list-item');
       // create a button to display each pokemon name
       let button = document.createElement('button');
       button.innerText = pokemon.name;
@@ -50,6 +48,8 @@ let pokemonRepository = (function () {
       button.setAttribute('type', 'button');
       button.setAttribute('data-toggle', 'modal');
       button.setAttribute('data-target', '#modal-container');
+      // add Bootstrap li class
+      listItem.classList.add('group-list-item');
       listItem.appendChild(button);
       listElement.appendChild(listItem);
       button.addEventListener('click', function (event) {
@@ -116,18 +116,20 @@ let pokemonRepository = (function () {
     modalTitle.empty();
     modalBody.empty();
 
-    modalTitle.innerText = pokemon.name;
-
     // Information about the pokemon selected
+    // Creating an element to title the modal
+    let titleElement = $('<h1>' + pokemon.name + '</h1>');
+    // Creating an element to show the pokemon's height
     let heightElement = $('<p>' + 'Height: ' + pokemon.height + '</p>');
-
+    // Creating an element to show the pokemon's types
     let typesElement = $('<p>' + 'Types: ' + pokemon.types + '</p>');
-
+    // Creating an element to show the pokemon's abilities
     let abilitiesElement = $('<p>' + 'Abilities: ' + pokemon.abilities + '</p>');
-
+    // Creating an element to show an image of the pokemon
     let imageElement = $('<img class="modal-img" />');
     imageElement.attr('src', pokemon.masterImage);
 
+    modalTitle.append(titleElement);
     modalBody.append(heightElement);
     modalBody.append(typesElement);
     modalBody.append(abilitiesElement);
