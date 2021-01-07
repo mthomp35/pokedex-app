@@ -92,7 +92,7 @@ main {
 
 /* Modal styles to override Bootstrap. This is where the pokemon information is shown */
 
-.modal h1 {
+.modal-title {
   text-transform: capitalize;
 }
 
