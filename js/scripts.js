@@ -118,7 +118,7 @@ let pokemonRepository = (function () {
 
     // Information about the pokemon selected
     // Creating an element to title the modal
-    let titleElement = $('<h1>' + pokemon.name + '</h1>');
+    let titleElement = $('<h2>' + pokemon.name + '</h2>');
     // Creating an element to show the pokemon's height
     let heightElement = $('<p>' + 'Height: ' + pokemon.height + '</p>');
     // Creating an element to show the pokemon's types

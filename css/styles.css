@@ -12,16 +12,20 @@ p {
   font-size: 1.2rem;
 }
 
+main {
+  text-align: center;
+}
+
 .logo {
   display: block;
   max-width: 65%;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 10px auto;
+  padding: 10px 0;
 }
 
-main {
-  text-align: center;
+.intro {
+  padding: 15px 0 0 0;
 }
 
 .pokemon-photos-overview {
