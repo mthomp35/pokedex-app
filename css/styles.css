@@ -103,7 +103,7 @@ main {
 .pokemon-button:hover,
 .pokemon-button:focus {
   cursor: pointer;
-  background-color: #2e5cb8;
+  background-color: #2d6ab5;
   opacity: 0.8;
 }
 
