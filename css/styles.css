@@ -80,7 +80,7 @@ main {
     text-align: left;
     text-transform: capitalize;
     color: #fff;
-    background-color: #2e5cb8;
+    background-color: #0c5460;
     padding: 10px;
     border-radius: 10px;
     border: 2px solid rgba(0, 0, 0, 0.3);
@@ -91,14 +91,14 @@ main {
 .pokemon-button:hover,
 .pokemon-button:focus {
   cursor: pointer;
+  background-color: #2e5cb8;
   opacity: 0.8;
 }
 
 /* Format image embedded in pokemon button */
 .btnImg {
   float: right;
-  height: 40px;
-  width: auto;
+  height: 50px;
 }
 
 /* Modal styles to override Bootstrap. This is where the pokemon information is shown */
