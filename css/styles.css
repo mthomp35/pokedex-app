@@ -26,6 +26,12 @@ main {
   font-size: 4vw;
 }
 
+.intro h1,
+.intro h2 {
+  color: #facc48;
+  text-shadow: 1px 1px gray;
+}
+
 .logo {
   display: block;
   max-width: 65%;
