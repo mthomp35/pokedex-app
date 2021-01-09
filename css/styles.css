@@ -14,7 +14,16 @@ p {
 
 main {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 100px;
+}
+
+.intro h1 {
+  padding: 15px 0 0 0;
+  font-size: 25px;
+}
+
+.intro h2 {
+  font-size: 18px;
 }
 
 .logo {
@@ -23,10 +32,6 @@ main {
   height: auto;
   margin: 10px auto;
   padding: 10px 0;
-}
-
-.intro {
-  padding: 15px 0 0 0;
 }
 
 .pokemon-photos-overview {
@@ -77,6 +82,7 @@ main {
 .pokedex-header {
   background-color: #c3c5c7;
   padding: 10px;
+  font-size: 18px;
 }
 
 /* Decorate the button listing the pokemon */
