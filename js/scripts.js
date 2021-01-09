@@ -9,26 +9,13 @@ let pokemonRepository = (function () {
   function add(pokemon) {
     // checks to ensure data type of pokemon input being added matches format of pokemonList & includes all properties
     if (typeof pokemon !== 'object') {
-      return "Wrong data type for Pokemon";
+      return 'Wrong data type for Pokemon';
     } else if (!pokemon.name || !pokemon.detailsUrl) {
-      return "Pokemon does not have all required properties";
+      return 'Pokemon does not have all required properties';
     } else {
       pokemonList.push(pokemon);
       return pokemonList;
     }
-  }
-
-  // function to remove pokemon from list
-  function remove(name) {
-    // loop through array and find object containing defined name, then remove that object (would use map normally to loop through array)
-    for(let i=0; i<pokemonList.length; i++) {
-      console.log(pokemonList[i], " contains ", name, "?");
-      if(name === pokemonList[i].name) {
-        pokemonList.splice(i, 1);
-        break;
-      }
-    }
-    return pokemonList;
   }
 
   // function to display full list of pokemon
@@ -137,7 +124,6 @@ let pokemonRepository = (function () {
 
   return {
     add: add,
-    remove: remove,
     getAll: getAll,
     addListItem:  addListItem,
     loadList: loadList,
