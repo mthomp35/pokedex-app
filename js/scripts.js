@@ -24,25 +24,32 @@ let pokemonRepository = (function () {
   }
 
   function addListItem(pokemon) {
-    // create variable to select the pokemon-list ul from the index
-      let listElement = document.querySelector('.pokemon-list');
-      let listItem = document.createElement('li');
-      // create a button to display each pokemon name
-      let button = document.createElement('button');
-      button.innerText = pokemon.name;
-      // add button class for formatting and Bootstrap
-      button.classList.add('pokemon-button', 'btn', 'btn-primary');
-      button.setAttribute('type', 'button');
-      button.setAttribute('data-toggle', 'modal');
-      button.setAttribute('data-target', '#modal-container');
-      // add Bootstrap li class
-      listItem.classList.add('group-list-item');
-      listItem.appendChild(button);
-      listElement.appendChild(listItem);
-      button.addEventListener('click', function () {
-        // show modal with details of the pokemon selected when button is clicked
-        showDetails(pokemon);
-      });
+    loadDetails(pokemon).then(function() {
+      // create variable to select the pokemon-list ul from the index
+        let listElement = document.querySelector('.pokemon-list');
+        let listItem = document.createElement('li');
+        // create a button to display each pokemon name
+        let button = document.createElement('button');
+        // create image to embed in button
+        let btnImg = document.createElement('img');
+        btnImg.setAttribute('src', pokemon.imageUrl);
+        // add text to button
+        button.innerText = pokemon.name;
+        // add button class for formatting and Bootstrap
+        button.classList.add('pokemon-button', 'btn', 'btn-primary');
+        button.setAttribute('type', 'button');
+        button.setAttribute('data-toggle', 'modal');
+        button.setAttribute('data-target', '#modal-container');
+        button.appendChild(btnImg);
+        // add Bootstrap li class
+        listItem.classList.add('group-list-item');
+        listItem.appendChild(button);
+        listElement.appendChild(listItem);
+        button.addEventListener('click', function () {
+          // show modal with details of the pokemon selected when button is clicked
+          showDetails(pokemon);
+        });
+    });
   }
 
   // show details of the pokemon
@@ -74,7 +81,6 @@ let pokemonRepository = (function () {
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
-      item.imageUrl = details.sprites.front_default;
       item.masterImage = details.sprites.other.dream_world.front_default;
       item.height = details.height;
       item.types = [];
