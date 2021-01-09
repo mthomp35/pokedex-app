@@ -19,11 +19,11 @@ main {
 
 .intro h1 {
   padding: 15px 0 0 0;
-  font-size: 25px;
+  font-size: 8vw;
 }
 
 .intro h2 {
-  font-size: 18px;
+  font-size: 4vw;
 }
 
 .logo {
@@ -82,7 +82,7 @@ main {
 .pokedex-header {
   background-color: #c3c5c7;
   padding: 10px;
-  font-size: 18px;
+  font-size: 4vw;
 }
 
 /* Decorate the button listing the pokemon */
@@ -137,4 +137,14 @@ main {
 
 .modal-footer {
   background-color: #fdfdfd;
+}
+
+@media all and (max-width: 375px) {
+  .intro h1 {
+    font-size: 25px;
+  }
+  .intro h2,
+  .pokedex-header {
+    font-size: 18px;
+  }
 }
