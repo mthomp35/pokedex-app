@@ -52,7 +52,7 @@ let pokemonRepository = (function () {
       listItem.classList.add('group-list-item');
       listItem.appendChild(button);
       listElement.appendChild(listItem);
-      button.addEventListener('click', function (event) {
+      button.addEventListener('click', function () {
         // show modal with details of the pokemon selected when button is clicked
         showDetails(pokemon);
       });
@@ -77,7 +77,7 @@ let pokemonRepository = (function () {
         add(pokemon);
       });
     }).catch(function (e) {
-      console.error(e);
+      console.error(e); // eslint-disable-line
     })
   }
 
@@ -103,12 +103,11 @@ let pokemonRepository = (function () {
       });
 
     }).catch(function (e) {
-      console.error(e);
+      console.error(e); // eslint-disable-line
     });
   }
 
   function showModal(pokemon) {
-    let modalHeader = $('.modal-header');
     let modalTitle = $('.modal-title');
     let modalBody = $('.modal-body');
 
