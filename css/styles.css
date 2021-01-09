@@ -91,11 +91,23 @@ main {
 }
 
 /* Modal styles to override Bootstrap. This is where the pokemon information is shown */
+.modal-header {
+  background-color: #009999;
+}
 
 .modal-title {
   text-transform: capitalize;
+  color: #fff;
+}
+
+.modal-body {
+  background-color: #fdfdfd;
 }
 
 .modal-img {
   max-width: 200px;
+}
+
+.modal-footer {
+  background-color: #fdfdfd;
 }
