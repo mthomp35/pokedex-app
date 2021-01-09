@@ -74,6 +74,11 @@ main {
   justify-content: center;
 }
 
+.pokedex-header {
+  background-color: #c3c5c7;
+  padding: 10px;
+}
+
 /* Decorate the button listing the pokemon */
 .pokemon-button {
     width: 250px;
