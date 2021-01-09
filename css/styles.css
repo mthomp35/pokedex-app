@@ -72,9 +72,9 @@ main {
 
 /* Decorate the button listing the pokemon */
 .pokemon-button {
-    width: 200px;
+    width: 250px;
     font-size: 16px;
-    text-align: center;
+    text-align: left;
     text-transform: capitalize;
     color: #fff;
     background-color: #2e5cb8;
@@ -89,6 +89,12 @@ main {
 .pokemon-button:focus {
   cursor: pointer;
   opacity: 0.8;
+}
+
+/* Format image embedded in pokemon button */
+.btnImg {
+  float: right;
+  width: 50px;
 }
 
 /* Modal styles to override Bootstrap. This is where the pokemon information is shown */
