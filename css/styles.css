@@ -68,6 +68,9 @@ main {
 
 .pokemon-list {
   list-style-type: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Decorate the button listing the pokemon */
@@ -81,7 +84,7 @@ main {
     padding: 10px;
     border-radius: 10px;
     border: 2px solid rgba(0, 0, 0, 0.3);
-    margin: 4px auto;
+    margin: 4px;
     transition: 0.2s opacity;
 }
 
@@ -94,8 +97,8 @@ main {
 /* Format image embedded in pokemon button */
 .btnImg {
   float: right;
-  width: 40px;
   height: 40px;
+  width: auto;
 }
 
 /* Modal styles to override Bootstrap. This is where the pokemon information is shown */
