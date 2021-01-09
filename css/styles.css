@@ -72,6 +72,7 @@ main {
 
 /* Decorate the button listing the pokemon */
 .pokemon-button {
+    width: 200px;
     font-size: 16px;
     text-align: center;
     text-transform: capitalize;
