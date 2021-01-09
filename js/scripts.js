@@ -32,7 +32,8 @@ let pokemonRepository = (function () {
         let button = document.createElement('button');
         // create image to embed in button
         let btnImg = document.createElement('img');
-        btnImg.setAttribute('src', pokemon.imageUrl);
+        btnImg.setAttribute('src', pokemon.masterImage);
+        btnImg.classList.add('btnImg');
         // add text to button
         button.innerText = pokemon.name;
         // add button class for formatting and Bootstrap
@@ -72,7 +73,7 @@ let pokemonRepository = (function () {
       });
     }).catch(function (e) {
       console.error(e); // eslint-disable-line
-    })
+    });
   }
 
   // Pull the pokemon details from the api (fetch them) and load the ones listed below
