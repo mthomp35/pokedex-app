@@ -14,7 +14,7 @@ p {
 
 main {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 .intro h1 {
@@ -146,6 +146,9 @@ main {
 }
 
 @media all and (max-width: 375px) {
+  .main {
+    margin-top: 100px;
+  }
   .intro h1 {
     font-size: 25px;
   }
