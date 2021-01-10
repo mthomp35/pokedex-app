@@ -87,14 +87,21 @@ main {
 }
 
 /* unique about page formats */
+.about-page {
+  background-image: url('../img/charizard_mawshot_by_sharkdiaries_ddqp1kv.png');
+}
+
 .about {
   max-width: 400px;
 }
 
+.about-list-header {
+  font-weight: bold;
+  color: #0c5460;
+}
+
 .about-list {
   text-align: left;
-  font-weight: bolder;
-  color: #0c5460;
 }
 
 /* start pokedex formatting */

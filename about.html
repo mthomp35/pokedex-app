@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
   </head>
-  <body>
+  <body class="about-page">
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" role="navigation">
     		<a class="navbar-brand" href="#">Pokédex</a>
@@ -31,17 +31,17 @@
       </nav>
     </header>
     <main>
-      <div>
-        <img src="img/charizard_mawshot_by_sharkdiaries_ddqp1kv.png" alt="Image of Charizard's open mouth" />
       <div class="intro">
         <h1>About this App</h1>
         <div class="about">
           <p>This is a web application project designed to load Pokemon data from an external API.</p>
-            <ul class="about-list">Features:
+          <p class="about-list-header">Features:</p>
+            <ul class="about-list">
               <li class="about-list__item">Search function</li>
               <li class="about-list__item">Modal display</li>
             </ul>
-            <ul class="about-list">Technology Used:
+          <p class="about-list-header">Technology Used:</p>
+            <ul class="about-list">
               <li class="about-list__item">HTML, CSS, Javascript</li>
               <li class="about-list__item">Bootstrap & jQuery</li>
               <li class="about-list__item">
@@ -52,7 +52,6 @@
           </p>
         </div>
       </div>
-
     </main>
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-polyfill.js"></script>
