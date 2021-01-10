@@ -88,11 +88,20 @@ main {
 
 /* unique about page formats */
 .about-page {
+  position: relative;
+  justify-content: center;
+}
+
+.about-page::before {
+  content: '';
   background-image: url('../img/charizard_mawshot_by_sharkdiaries_ddqp1kv.png');
+  background-size: auto;
+  position: absolute;
+  opacity: 0.8;
 }
 
 .about {
-  max-width: 400px;
+  text-align: center;
 }
 
 .about-list-header {
@@ -101,6 +110,7 @@ main {
 }
 
 .about-list {
+  display: inline-block;
   text-align: left;
 }
 
