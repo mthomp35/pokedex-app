@@ -87,7 +87,15 @@ main {
 }
 
 /* unique about page formats */
+.about {
+  max-width: 400px;
+}
 
+.about-list {
+  text-align: left;
+  font-weight: bolder;
+  color: #0c5460;
+}
 
 /* start pokedex formatting */
 .pokedex-header {
