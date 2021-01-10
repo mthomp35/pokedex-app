@@ -140,6 +140,26 @@ let pokemonRepository = (function () {
 
 })();
 
+// pull user input from search bar, find and return it from the pokemon buttons
+function searchFunction () { // eslint-disable-line
+  // define variables to pull user input & where we will search for that input on the page
+  let input = document.querySelector('.search-input');
+  let filter = input.value.toUpperCase();
+  // search in the pokedex list items
+  let searchList = document.querySelectorAll('.group-list-item');
+  // loop through all list items and hide those not matching the input
+  for (let i = 0; i < searchList.length; i++) {
+    // find the button under the list item with index i
+    let button = searchList[i].getElementsByTagName('button')[0];
+    // if the innerText of the button includes input from the user, display it on the screen
+    if (button.innerText.toUpperCase().indexOf(filter) > -1) {
+      searchList[i].style.display = '';
+    } else {
+      searchList[i].style.display = 'none';
+    }
+  }
+}
+
 // load the data from the pokemon api
 pokemonRepository.loadList().then(function() {
   // call all objects in pokemonList and add their 'name' to a button in a list
