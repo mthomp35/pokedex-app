@@ -106,6 +106,13 @@ main {
   z-index: -1;
 }
 
+.intro-header h1 {
+  padding: 15px 0 0 0;
+  font-size: 8vw;
+  color: #000;
+  text-shadow: 1px 1px gray;
+}
+
 .about {
   display: block;
   max-width: 500px;
@@ -194,14 +201,17 @@ main {
   .main {
     margin-top: 100px;
   }
-  .intro h1 {
+  .intro h1,
+  .intro-header h1 {
     font-size: 25px;
   }
   .intro h2,
-  .pokedex-header {
+  .pokedex-header,
+  .about p {
     font-size: 18px;
   }
-  p {
+  p,
+  .about-list__item {
     font-size: 16px;
   }
 }
