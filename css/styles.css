@@ -96,23 +96,32 @@ main {
 .about-page::before {
   content: '';
   background-image: url('../img/charizard_mawshot_by_sharkdiaries_ddqp1kv.png');
-  background-size: auto;
+  background-size: cover;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0.8;
+  opacity: 0.6;
   z-index: -1;
 }
 
 .about {
-  text-align: center;
+  display: block;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+}
+
+.about p {
+  font-size: 20px;
 }
 
 .about-list-header {
-  font-weight: bold;
+  font-weight: bolder;
   color: #0c5460;
+  background-color: #e2e2e2;
 }
 
 .about-list {
