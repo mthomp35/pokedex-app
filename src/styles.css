@@ -97,13 +97,14 @@ main {
   content: '';
   background-image: url('../img/charizard_mawshot_by_sharkdiaries_ddqp1kv.png');
   background-size: cover;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   opacity: 0.6;
   z-index: -1;
+  margin-top: 50px;
 }
 
 .intro-header h1 {
